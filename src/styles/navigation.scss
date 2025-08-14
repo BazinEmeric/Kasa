@@ -1,0 +1,15 @@
+.Navigation {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 24px;
+	gap: 57px;
+	.nav-active {
+		text-decoration: underline;
+	}
+	a {
+		color: black;
+		text-decoration: none;
+	}
+}
