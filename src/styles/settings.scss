@@ -1,5 +1,13 @@
-body{
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    color: #FF6060;
+$mainColor: #ff6060;
+
+body {
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	color: $mainColor;
+}
+
+main,
+header {
+	max-width: 1240px;
+	margin: auto;
 }
