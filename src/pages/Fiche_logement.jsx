@@ -3,12 +3,14 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useNavigate, useParams } from "react-router-dom";
 import Datas from "../assets/Datas/logements.json";
+import Collapse from "../components/Collapse";
 
 const Fiche_logement = () => {
-	const [item3, majItem3] = useState({});
+	const [item3, majItem3] = useState(null);
 	const navigate = useNavigate();
 	const { selectedId } = useParams();
 	const tab = Datas.map((item) => item.id);
+	const tabrating = [0, 1, 2, 3, 4];
 	useEffect(
 		() =>
 			tab.includes(selectedId)
@@ -16,46 +18,65 @@ const Fiche_logement = () => {
 				: navigate("/pageErreur"),
 		[tab, selectedId, navigate]
 	);
-	return (
-		<div>
-			<Header />
-			<main>
-				<p>{item3.title}</p>
-				<img src={item3.cover} alt={item3.title} />
-				<br />
-				<p>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
-					quia voluptates praesentium eaque molestiae fuga non! At blanditiis
-					maxime esse, illo dolorem sapiente unde, dicta corrupti asperiores
-					incidunt cumque iste hic. Incidunt nisi totam laudantium iste qui esse
-					adipisci, dolorem cupiditate facere optio ratione voluptate fugit
-					commodi doloribus aut odio rem voluptas iure blanditiis nostrum
-					doloremque explicabo alias error? Corporis velit ut maiores tenetur
-					maxime debitis labore, reprehenderit cumque incidunt quisquam ratione
-					inventore exercitationem dolore provident, assumenda perferendis,
-					totam nobis officiis! Doloribus necessitatibus beatae, delectus
-					architecto quasi voluptatibus saepe iusto molestiae assumenda harum
-					consequatur nulla consequuntur dignissimos, suscipit blanditiis
-					facilis, temporibus fugit odio earum. Nam accusamus explicabo in saepe
-					corporis pariatur minima ipsam reprehenderit voluptatibus possimus
-					maiores, quibusdam adipisci magnam corrupti beatae expedita dolorem?
-					Tempora consectetur accusamus enim quidem doloremque repudiandae
-					architecto, earum natus numquam eum a aperiam. Modi, deleniti. Omnis
-					nesciunt tempore ad veniam. Velit aliquid vitae inventore est debitis
-					fugit rem facilis. Alias itaque beatae ratione odio quia explicabo
-					sapiente maiores inventore animi tempore vero iste aliquid sequi esse
-					est molestias fugiat, eius modi veniam sint. Deleniti soluta placeat
-					error ullam rerum, architecto sint eveniet sequi deserunt tempora,
-					quisquam mollitia ea quis nemo quaerat excepturi? Ducimus, obcaecati
-					ratione. ipsum, dolor sit amet consectetur adipisicing elit.
-					Accusantium, quidem tempora, placeat dolore cupiditate optio itaque
-					amet quaerat eaque sit rem magni eum voluptates accusamus illo culpa
-					reprehenderit, fuga animi.
-				</p>
-			</main>
-			<Footer />
-		</div>
-	);
+	if (item3 !== null) {
+		return (
+			<div>
+				<Header />
+				<main>
+					<img className="picture" src={item3.cover} alt={item3.title} />
+					<div className="containerInfoNameRating">
+						<div className="info">
+							<p className="title">{item3.title}</p>
+							<p className="adress">{item3.location}</p>
+							<div className="listTag">
+								{item3.tags.map((item, index) => (
+									<div key={item + index} className="tag">
+										{item}
+									</div>
+								))}
+							</div>
+						</div>
+						<div className="hostandrating">
+							<div className="host">
+								<p className="name">{item3.host.name}</p>
+								<img
+									className="photoName"
+									src={item3.host.picture}
+									alt={"photo de " + item3.host.name}
+								/>
+							</div>
+							<div className="rating">
+								{tabrating.map((item) =>
+									item < item3.rating ? (
+										<div className="containerstar" key={"star" + item}>
+											<img
+												className="star"
+												src="/Vector.svg"
+												alt="etoile orange"
+											/>
+										</div>
+									) : (
+										<div className="containerstar" key={"star" + item}>
+											<img
+												className="star"
+												src="/VectorNeutral.svg"
+												alt="etoile grise"
+											/>
+										</div>
+									)
+								)}
+							</div>
+						</div>
+					</div>
+					<div className="containerCollapse">
+						<Collapse page="logement" item={0} Datas={item3.description} />
+						<Collapse page="logement" item={1} Datas={item3.equipments} />
+					</div>
+				</main>
+				<Footer />
+			</div>
+		);
+	}
 };
 
 export default Fiche_logement;

@@ -1,0 +1,92 @@
+.picture {
+	margin-top: 50px;
+	margin-bottom: 30px;
+	height: 415px;
+	border-radius: 25px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.containerInfoNameRating {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.title {
+	font-size: 36px;
+	font-weight: 500;
+	margin: 0;
+}
+.adress {
+	color: black;
+	font-size: 18px;
+	font-weight: 500;
+	margin: 0;
+	margin-top: 15px;
+}
+.tag {
+	min-width: 75px;
+	padding: 0 20px;
+	box-sizing: content-box;
+	height: 25px;
+	background-color: $mainColor;
+	color: white;
+	font-size: 14px;
+	font-weight: 700;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.listTag {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+	margin-top: 20px;
+	margin-bottom: 24px;
+}
+
+.photoName {
+	width: 64px;
+	height: 64px;
+	border-radius: 100%;
+	object-fit: cover;
+}
+.name {
+	display: flex;
+	align-items: center;
+	text-align: end;
+	height: 64px;
+	font-size: 18px;
+	font-weight: 500;
+	padding-right: 15px;
+	line-height: 27px;
+}
+
+.host {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 167px;
+	height: 64px;
+}
+
+.containerstar {
+	margin-top: 31px;
+	display: inline-block;
+	height: 36px;
+	width: 36px;
+	.star {
+		width: 24.75px;
+		height: 24px;
+	}
+}
+
+.containerCollapse {
+	display: flex;
+	align-items: start;
+	justify-content: space-between;
+}

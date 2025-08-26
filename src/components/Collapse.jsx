@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import listeTexte from "../assets/Datas/texte.json";
 
-const Collapse = ({ page, item }) => {
+const Collapse = ({ page, item, Datas }) => {
+	const tab = ["Description", "Équipements"];
 	const [Status, updateStatus] = useState("close");
 	let titre = "";
 	let content = "";
@@ -9,7 +10,14 @@ const Collapse = ({ page, item }) => {
 		titre = listeTexte[item].Titre;
 		content = listeTexte[item].contenu;
 	} else {
-		titre = "";
+		titre = tab[item];
+		item === 0
+			? (content = Datas)
+			: (content = Datas.map((item, index) => (
+					<p key={item + index} className="equipItem">
+						{item}
+					</p>
+			  )));
 	}
 
 	useEffect(() => {
@@ -19,20 +27,16 @@ const Collapse = ({ page, item }) => {
 	return (
 		<div>
 			<div
-				className="barreCollapse"
+				className={"barreCollapse " + page}
 				onClick={() =>
 					Status === "close" ? updateStatus("open") : updateStatus("close")
 				}
 			>
 				<span>{titre}</span>
-				<img
-					src="./public/fleche.svg"
-					alt="fleche de défilement"
-					className={Status}
-				/>
+				<img src="/fleche.svg" alt="fleche de défilement" className={Status} />
 			</div>
 			<div className={"content content__" + Status}>
-				<p className="content__text">{content}</p>
+				<div className="content__text">{content}</div>
 			</div>
 		</div>
 	);
