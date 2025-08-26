@@ -1,0 +1,56 @@
+.barreCollapse {
+	background-color: $mainColor;
+	color: white;
+	font-size: 24px;
+	font-weight: 700;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 5px;
+	padding: 10px 20px 10px 15px;
+	.open {
+		transition: rotate 300ms ease-out;
+		rotate: -180deg;
+	}
+	.close {
+		transition: rotate 300ms ease-out;
+		rotate: 0deg;
+	}
+}
+
+.content {
+	color: black;
+	border-radius: 10px 10px 5px 5px;
+	background: rgba(#f6f6f6, 0.45);
+	&__open {
+		height: 100%;
+		padding: 15px;
+		font-size: 18px;
+		& > .content__text {
+			transition: transform 500ms;
+			transform: translateY(0px);
+		}
+		transition: transform 500ms, opacity 250ms, color 300ms,
+			background-color 250ms, border 350ms;
+		transition-delay: 0ms, 200ms, 300ms, 150ms, 150ms;
+		&:hover {
+			background-color: blue;
+			opacity: 0.8;
+			transform: scale(1.15);
+			color: white;
+			text-align: center;
+			border: 6px solid darken(blue, 10%);
+			font-size: 21px;
+			font-weight: 500;
+		}
+	}
+	&__close {
+		height: 0;
+		margin: 0;
+		padding: 0;
+		& > .content__text {
+			font-size: 0;
+			transform: translateY(-30px);
+		}
+	}
+}

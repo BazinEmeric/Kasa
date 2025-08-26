@@ -14,6 +14,12 @@
 			rgba(#0a0a0a, 0),
 			rgba(#040404, 0.41)
 		);
+		&:hover {
+			& + .card__img {
+				transition: border-radius 2s 500ms;
+				border-radius: 200px;
+			}
+		}
 	}
 	&__title {
 		position: absolute;
@@ -32,5 +38,13 @@
 		height: 100%;
 		object-fit: cover;
 		border-radius: 10px;
+		&:hover {
+			transition: border-radius 2s 500ms;
+			border-radius: 100px;
+		}
+	}
+	&:hover {
+		transition: transform 500ms ease-out;
+		transform: scale(1.15);
 	}
 }

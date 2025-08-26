@@ -1,24 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useNavigate, useParams } from "react-router-dom";
 import Datas from "../assets/Datas/logements.json";
 
 const Fiche_logement = () => {
+	const [item3, majItem3] = useState({});
 	const navigate = useNavigate();
 	const { selectedId } = useParams();
 	const tab = Datas.map((item) => item.id);
-	useEffect(() =>
-		tab.includes(selectedId)
-			? console.log(tab.includes(selectedId))
-			: navigate("/pageErreur")
+	useEffect(
+		() =>
+			tab.includes(selectedId)
+				? majItem3(Datas.find((datas) => datas.id === selectedId))
+				: navigate("/pageErreur"),
+		[tab, selectedId, navigate]
 	);
-
 	return (
 		<div>
 			<Header />
 			<main>
-				<p>{selectedId}</p>
+				<p>{item3.title}</p>
+				<img src={item3.cover} alt={item3.title} />
 				<br />
 				<p>
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
