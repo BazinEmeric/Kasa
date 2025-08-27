@@ -13,9 +13,10 @@ header {
 			width: 175px;
 		}
 	}
-	@media screen and (max-width: 375px) {
+	@media screen and (max-width: 376px) {
 		width: 335px;
 		height: 46.88px;
+		margin-top: 20px;
 		.header__img {
 			width: 145px;
 		}

@@ -7,7 +7,11 @@ const Banner = ({ page }) => {
 	let stylebanner = "--" + page;
 
 	if (page === "home") {
-		paraf = <p className="banner__P">Chez vous, partout et ailleurs</p>;
+		paraf = (
+			<p className="banner__P">
+				Chez vous, <span className="banner__media">partout et ailleurs</span>
+			</p>
+		);
 		source = "./src/assets/image/IMG.png";
 		descrip = "photo de roches sur le rivage";
 	}

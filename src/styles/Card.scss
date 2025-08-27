@@ -50,4 +50,28 @@
 		transition: transform 500ms ease-out;
 		transform: scale(1.15);
 	}
+
+	@media screen and (max-width: 376px) {
+		height: 255px;
+		width: 100%;
+		padding-top: 0;
+		&__gradient {
+			height: 255px;
+			&:hover {
+				& + .card__img {
+					transition: none;
+					border-radius: 10px;
+				}
+				transition: none;
+				border-radius: 10px;
+			}
+		}
+		&__title {
+			top: 160px;
+		}
+		&:hover {
+			transition: none;
+			transform: scale(1);
+		}
+	}
 }

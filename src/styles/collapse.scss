@@ -25,9 +25,10 @@
 			transform: scale(0.9);
 		}
 	}
-	@media screen and (max-width: 375px) {
+	@media screen and (max-width: 376px) {
 		font-size: 13px;
 		height: 30px;
+		padding: 0px 20px 0px 15px;
 		.arrow {
 			transform: scale(0.8);
 		}
@@ -72,8 +73,9 @@
 	@media screen and (max-width: 640px) {
 		font-size: 16px;
 	}
-	@media screen and (max-width: 375px) {
+	@media screen and (max-width: 376px) {
 		font-size: 14px;
+		padding-top: 0px;
 	}
 }
 
