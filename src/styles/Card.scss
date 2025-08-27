@@ -16,9 +16,12 @@
 		);
 		&:hover {
 			& + .card__img {
-				transition: border-radius 2s 500ms;
+				transition: border-radius 1s 500ms, rotate 1s 500ms;
 				border-radius: 200px;
+				rotate: 360deg;
 			}
+			transition: border-radius 1s 500ms;
+			border-radius: 75px;
 		}
 	}
 	&__title {

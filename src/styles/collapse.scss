@@ -18,6 +18,20 @@
 		transition: rotate 300ms ease-out;
 		rotate: 0deg;
 	}
+	@media screen and (max-width: 640px) {
+		font-size: 18px;
+		height: 32px;
+		.arrow {
+			transform: scale(0.9);
+		}
+	}
+	@media screen and (max-width: 375px) {
+		font-size: 13px;
+		height: 30px;
+		.arrow {
+			transform: scale(0.8);
+		}
+	}
 }
 
 .content {
@@ -54,6 +68,12 @@
 			clip-path: inset(100% 0px 0px 0px);
 			height: 0;
 		}
+	}
+	@media screen and (max-width: 640px) {
+		font-size: 16px;
+	}
+	@media screen and (max-width: 375px) {
+		font-size: 14px;
 	}
 }
 

@@ -33,7 +33,11 @@ const Collapse = ({ page, item, Datas }) => {
 				}
 			>
 				<span>{titre}</span>
-				<img src="/fleche.svg" alt="fleche de défilement" className={Status} />
+				<img
+					src="/fleche.svg"
+					alt="fleche de défilement"
+					className={"arrow " + Status}
+				/>
 			</div>
 			<div
 				className={
