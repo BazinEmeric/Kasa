@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { useNavigate, useParams } from "react-router-dom";
 import Datas from "../assets/Datas/logements.json";
 import Collapse from "../components/Collapse";
+import Slideshow from "../components/Slideshow";
 
 const Fiche_logement = () => {
 	const [item3, majItem3] = useState(null);
@@ -23,7 +24,7 @@ const Fiche_logement = () => {
 			<div>
 				<Header />
 				<main>
-					<img className="picture" src={item3.cover} alt={item3.title} />
+					<Slideshow pictures={item3.pictures} />
 					<div className="containerInfoNameRating">
 						<div className="info">
 							<p className="title">{item3.title}</p>

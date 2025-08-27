@@ -6,6 +6,13 @@ header {
 	margin: auto;
 	margin-top: 45px;
 	height: 68px;
+
+	@media screen and (max-width: 640px) {
+		height: 60px;
+		.header__img {
+			width: 175px;
+		}
+	}
 	@media screen and (max-width: 375px) {
 		width: 335px;
 		height: 46.88px;

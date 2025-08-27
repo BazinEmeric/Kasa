@@ -1,0 +1,38 @@
+.containerSlide {
+	height: 500px;
+}
+.picture {
+	margin-top: 50px;
+	margin-bottom: 30px;
+	height: 415px;
+	border-radius: 25px;
+	width: 100%;
+	object-fit: cover;
+	position: relative;
+	z-index: 0;
+}
+.number {
+	color: white;
+	position: relative;
+	z-index: 1;
+	bottom: 185px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 25px;
+}
+
+.next,
+.prewiew {
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+	bottom: 300px;
+}
+
+.next {
+	left: min(calc(1240px - 122px), calc(100vw - 134px));
+}
+.prewiew {
+	left: 26px;
+}
