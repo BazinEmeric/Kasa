@@ -1,14 +1,15 @@
 .card {
-	width: 340px;
-	height: 340px;
+	width: 100%;
+	height: 100%;
 	padding-top: 56px;
 	position: relative;
 	&__gradient {
 		border-radius: 10px;
 		position: absolute;
+		top: 0;
 		z-index: 1;
 		width: 100%;
-		height: 340px;
+		height: 100%;
 		background: linear-gradient(
 			rgba(white, 0),
 			rgba(#0a0a0a, 0),
@@ -30,9 +31,23 @@
 		color: white;
 		font-weight: 700;
 		font-size: 18px;
-		top: 300px;
+		bottom: 7px;
 		left: 20px;
 		width: 200px;
+		@media screen and (max-width: 1100px) {
+			font-size: 16px;
+		}
+		@media screen and (max-width: 900px) {
+			font-size: 18px;
+		}
+		@media screen and (max-width: 640px) {
+			font-size: 14px;
+			width: 160px;
+		}
+		@media screen and (max-width: 440px) {
+			font-size: 18px;
+			width: 200px;
+		}
 	}
 	&__img {
 		position: relative;
@@ -51,12 +66,8 @@
 		transform: scale(1.15);
 	}
 
-	@media screen and (max-width: 376px) {
-		height: 255px;
-		width: 100%;
-		padding-top: 0;
+	@media screen and (max-width: 900px) {
 		&__gradient {
-			height: 255px;
 			&:hover {
 				& + .card__img {
 					transition: none;
@@ -66,12 +77,19 @@
 				border-radius: 10px;
 			}
 		}
-		&__title {
-			top: 160px;
-		}
 		&:hover {
 			transition: none;
 			transform: scale(1);
+		}
+	}
+
+	@media screen and (max-width: 440px) {
+		height: 255px;
+		width: 100%;
+		padding-top: 0;
+		&__gradient {
+			height: 255px;
+			width: 100%;
 		}
 	}
 }

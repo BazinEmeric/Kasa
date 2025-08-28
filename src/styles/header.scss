@@ -3,7 +3,6 @@ header {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	margin: auto;
 	margin-top: 45px;
 	height: 68px;
 
@@ -13,7 +12,7 @@ header {
 			width: 175px;
 		}
 	}
-	@media screen and (max-width: 376px) {
+	@media screen and (max-width: 440px) {
 		width: 335px;
 		height: 46.88px;
 		margin-top: 20px;

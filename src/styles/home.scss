@@ -6,9 +6,25 @@
 	&__Grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		column-gap: 56px;
+		gap: 37px;
 	}
-	@media screen and (max-width: 376px) {
+
+	@media screen and (max-width: 900px) {
+		padding: 0px 30px 30px 30px;
+		&__Grid {
+			grid-template-columns: 1fr 1fr;
+			column-gap: 30px;
+		}
+	}
+
+	@media screen and (max-width: 900px) {
+		padding: 0px 20px 20px 20px;
+		&__Grid {
+			column-gap: 20px;
+		}
+	}
+
+	@media screen and (max-width: 440px) {
 		padding: 0;
 		margin-top: 20px;
 		margin-bottom: 20px;
