@@ -28,7 +28,7 @@
 	@media screen and (max-width: 440px) {
 		font-size: 13px;
 		height: 30px;
-		padding: 0px 20px 0px 15px;
+		padding: 0px 10px 0px 15px;
 		.arrow {
 			transform: scale(0.8);
 		}
@@ -53,7 +53,7 @@
 		}
 		&--close {
 			transform: translateY(-120%);
-			clip-path: inset(100% 0px 0px 0px);
+			clip-path: inset(120% 0px 0px 0px);
 			height: 0;
 		}
 	}
@@ -74,15 +74,24 @@
 		font-size: 16px;
 	}
 	@media screen and (max-width: 440px) {
+		width: 100%;
 		font-size: 14px;
-		padding-top: 0px;
+		padding-top: 7px;
 	}
 }
 
-.logement {
+.Width-logement {
 	max-width: 582px;
-	width: calc(50vw - 76px);
-	box-sizing: border-box;
+	width: 100%;
+	.logement {
+		height: 20px;
+		font-size: 16px;
+	}
+	@media screen and (max-width: 440px) {
+		.logement {
+			height: 32px;
+		}
+	}
 }
 
 .equipItem {

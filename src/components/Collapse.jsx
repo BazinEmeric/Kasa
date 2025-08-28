@@ -25,7 +25,7 @@ const Collapse = ({ page, item, Datas }) => {
 	}, []);
 
 	return (
-		<div>
+		<div className={"Width-" + page}>
 			<div
 				className={"barreCollapse " + page}
 				onClick={() =>

@@ -3,7 +3,13 @@
 	align-items: center;
 	justify-content: space-between;
 }
+.hostandrating {
+	width: 180px;
+}
 
+.info {
+	width: 65%;
+}
 .title {
 	font-size: 36px;
 	font-weight: 500;
@@ -17,7 +23,7 @@
 	margin-top: 15px;
 }
 .tag {
-	min-width: 75px;
+	min-width: 115px;
 	padding: 0 20px;
 	box-sizing: content-box;
 	height: 25px;
@@ -35,6 +41,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+	flex-wrap: wrap;
 	gap: 10px;
 	margin-top: 20px;
 	margin-bottom: 24px;
@@ -82,4 +89,78 @@
 	justify-content: space-between;
 	gap: 76px;
 	margin-bottom: 50px;
+	@media screen and (max-width: 1000px) {
+		gap: 40px;
+	}
+	@media screen and (max-width: 800px) {
+		gap: 30px;
+	}
+}
+@media screen and (max-width: 640px) {
+	.containerInfoNameRating {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.info {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	.hostandrating {
+		width: 100%;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.containerCollapse {
+		width: 100%;
+		flex-direction: column;
+		gap: 20px;
+	}
+	.title {
+		font-size: 18px;
+		margin: 0px;
+		width: calc(90vw - 40px);
+		text-wrap: wrap;
+	}
+	.adress {
+		font-size: 14px;
+		margin: 0px;
+	}
+	.listTag {
+		margin: 0px;
+		width: calc(90vw - 40px);
+	}
+	.photoName {
+		height: 32px;
+		width: 32px;
+	}
+	.name {
+		font-size: 12px;
+		width: 50px;
+		height: 32px;
+		margin: 0;
+		line-height: 15px;
+	}
+	.rating {
+		height: 64px;
+	}
+	.containerstar {
+		margin-top: 23px;
+		height: 18px;
+		width: 18px;
+		.star {
+			width: 13.41px;
+			height: 13px;
+		}
+	}
+	.tag {
+		font-size: 10px;
+		padding: 0 10px;
+		min-width: 64px;
+	}
 }

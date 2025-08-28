@@ -31,8 +31,48 @@
 }
 
 .next {
-	left: min(calc(1240px - 122px), calc(100vw - 134px));
+	left: min(calc(1240px - 122px), calc(100vw - 174px));
 }
 .prewiew {
 	left: 26px;
+}
+@media screen and (max-width: 1000px) {
+	.next,
+	.prewiew {
+		bottom: 270px;
+		height: 60px;
+	}
+	.next {
+		left: calc(100vw - 150px);
+	}
+}
+@media screen and (max-width: 640px) {
+	.containerSlide {
+		height: 255px;
+		margin: 20px 0;
+	}
+	.picture {
+		margin: 0;
+		height: 255px;
+	}
+	.number {
+		bottom: 70px;
+		font-size: 12px;
+	}
+	.next,
+	.prewiew {
+		bottom: 150px;
+		height: 20px;
+	}
+	.prewiew {
+		left: 16px;
+	}
+	.next {
+		left: calc(100vw - 76px);
+	}
+}
+@media screen and (max-width: 440px) {
+	.number {
+		display: none;
+	}
 }

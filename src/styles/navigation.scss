@@ -4,6 +4,7 @@
 	justify-content: space-around;
 	align-items: center;
 	font-size: 24px;
+	font-weight: 500;
 	gap: 18.5%;
 	width: 309px;
 	a {
@@ -20,6 +21,6 @@
 	}
 	@media screen and (max-width: 440px) {
 		font-size: 12px;
-		width: 190px;
+		gap: 26px;
 	}
 }
